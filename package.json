@@ -1,7 +1,9 @@
 {
-	"name": "rjmetrics-js",
+	"name": "rjmetrics",
 	"version": "0.1.0",
+	"author": "Connor McArthur <cmcarthur@rjmetrics.com>",
 	"description": "RJMetrics Client Library for Javascript",
+	"main": "client.js",
 	"dependencies": {
 		"q": "1.0.0",
 		"needle": "0.6.3"
