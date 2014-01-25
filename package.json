@@ -1,0 +1,9 @@
+{
+	"name": "rjmetrics-js",
+	"version": "0.1.0",
+	"description": "RJMetrics Client Library for Javascript",
+	"dependencies": {
+		"q": "1.0.0",
+		"needle": "0.6.3"
+	}
+}
