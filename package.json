@@ -1,6 +1,6 @@
 {
 	"name": "rjmetrics",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"author": "Connor McArthur <cmcarthur@rjmetrics.com>",
 	"description": "RJMetrics Client Library for Javascript",
 	"main": "client.js",
