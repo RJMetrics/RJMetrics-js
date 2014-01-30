@@ -39,7 +39,17 @@ Client.prototype.pushData = function(tableName, data, baseUrl) {
 		}, this);
 
 	Q.all(promises).then(function(promises) {
-		deferred.resolve(promises);
+		var hasErrors = false;
+
+		promises.forEach( function(el) {
+			if(el.code != 201)
+				hasErrors = true;
+		});
+
+		if(!hasErrors)
+			deferred.resolve(promises);
+		else
+			deferred.reject(promises);
 	}).fail(function(error) {
 		deferred.reject(error);
 	});
