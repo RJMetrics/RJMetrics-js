@@ -1,7 +1,7 @@
 {
-	"name": "rjmetrics-examples",
+  "name": "rjmetrics-examples",
   "version": "1.0.0",
   "dependencies": {
-    "rjmetrics": "0.1.1"
+    "rjmetrics": "0.2.0"
   }
 }

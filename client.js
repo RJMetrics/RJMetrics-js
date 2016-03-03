@@ -20,10 +20,8 @@ Client.SANDBOX_BASE = "https://sandbox-connect.rjmetrics.com/v2";
 Client.MAX_REQUEST_SIZE = 100;
 
 Client.prototype.authenticate = function() {
-	return this.pushData(
-		"test",
-		{"keys":["id"], "id": 1},
-		Client.SANDBOX_BASE
+	return this.makeAuthenticateCall(
+		Client.API_BASE
 	);
 }
 
@@ -85,5 +83,30 @@ Client.prototype.makeApiCall = function(tableName, data, baseUrl) {
 
 	return deferred.promise;
 }
+
+Client.prototype.makeAuthenticateCall = function(baseUrl) {
+	if(baseUrl === undefined)
+		baseUrl = Client.API_BASE;
+
+	var fullUrl = baseUrl + "/client/" + this.clientId +
+		"/authenticate?apikey=" + this.apiKey;
+
+	var deferred = Q.defer();
+
+	needle.get(
+		fullUrl,
+		function(error, response, body) {
+			if(error)
+				deferred.reject(error);
+			else
+				deferred.resolve({
+					code: response.statusCode
+				});
+		}
+	)
+
+	return deferred.promise;
+}
+
 
 exports.Client = Client;
