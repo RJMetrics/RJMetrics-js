@@ -7,5 +7,8 @@
 	"dependencies": {
 		"q": "1.0.0",
 		"needle": "0.6.3"
+	},
+	"repository": {
+		"url":  "https://github.com/RJMetrics/RJMetrics-js"
 	}
 }
